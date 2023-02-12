@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Doctrine\Inflector\Rules\French\Rules;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUserRequest extends FormRequest
+class LoginUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +24,8 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed'],
+            'email' => ['required', 'string', 'email'],
+            'password' => ['required', 'string', 'min:6'],
         ];
     }
 }
