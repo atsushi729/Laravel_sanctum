@@ -6,14 +6,9 @@ use Illuminate\Http\Request;
 
 class tasksController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(): object
     {
-        //
+        return response()->json('Test');
     }
 
     /**
